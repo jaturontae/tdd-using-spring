@@ -18,7 +18,11 @@ package com.bank.service;
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
 
+import java.util.Calendar;
+
 public interface TransferService {
+
+    boolean validateTransferTime(Calendar transferTime);
 
     TransferReceipt transfer(double amount, String srcAcctId, String destAcctId)
             throws InsufficientFundsException;
